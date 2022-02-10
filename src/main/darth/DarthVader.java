@@ -27,28 +27,6 @@ Logic:
 - if princess Leia is on the planet, then set truel else false
 */
 
-/*
-- Check "Darth Vader"'s starship
-    - endpoint | people -> array | "results"
-        - string | "name"
-        - array | "starships" (endpoint)
-- Check starship info
-    - endpoint | starships
-        - string | "name" *return*
-        - string | "model" *return*
-        - string | "starship_class" *return*
-        - string | "crew" *return*
-
-- Check "Alderaan"
-    - endpoint | planets -> array | "results"
-        - string | "name"
-        - array | "residents"
-- Check residents
-    - endpoint | people
-        - string | "name" <- true for Leia
-
-*/
-
 public class DarthVader {
     private static JSONObject getObj(String endpoint, String toSearch) throws Exception {
         JSONArray arr = Swapi.getArr(endpoint);
@@ -64,7 +42,7 @@ public class DarthVader {
     }
     private static JSONArray getArrObj(String endpoint, String toSearch, String key) throws Exception {
         JSONObject obj = getObj(endpoint, toSearch);
-        return (obj != null) ? obj.getJSONArray(key) : null;
+        return (obj != null) ? obj.getJSONArray(key) : new JSONArray();
     }
 
     private static String getCrew(String endpoint, String toSearch) throws Exception {
