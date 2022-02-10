@@ -21,5 +21,13 @@ The api returns the following
 {"isLeiaOnPlanet":true,"starships":[{"name":"TIE Advanced x1","model":"Twin Ion Engine Advanced x1","class":"Starfighter"}],"crew":"342,953"}
 ```
 
+## Criteria
+- no starship found
+  - empty array returned
+- no crew found
+  - "0" returned
+- Leia not on planet
+  - false returned    
+
 ## Additional Libraries used
 org.json
